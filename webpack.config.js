@@ -45,6 +45,15 @@ const config = {
   resolve: {
     modules: [path.resolve('./node_modules'), path.resolve('./src')],
     extensions: ['.json', '.js']
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'src'),
+    port: 8080
+  },
+  watch: true,
+  watchOptions: {
+    ignored: ['node_modules'],
+    poll: 1000 // Check for changes every second
   }
 };
 

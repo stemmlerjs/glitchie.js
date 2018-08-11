@@ -8,14 +8,26 @@
   <input type='file' accept='image/*' onchange='openFile(event)'>
   <img style="width: 500px;height: 500px;" id='output'></img>
 
+  <button onclick="glitchPicture(event)">Glitch</button>
+  <a id="downloadLnk" download="YourFileName.jpg">Download as image</a>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="../lib/glitchie.js"></script>
+  <script src="./glitchie.js"></script>
   <script>
     let glitch = new glitchie();
+
+    console.log('hi')
+    console.log('asdlkajs')
     
-    function openFile (file) {
-      glitch.read(file);
+    async function openFile (file) {
+      await glitch.read(file);
     }
+
+    function glitchPicture (event) {
+      event.preventDefault();
+      glitch.bend();
+    }
+
   </script>
 </body>
 

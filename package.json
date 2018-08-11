@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --env dev && webpack --env build && npm run test",
-    "dev": "webpack --progress --colors --watch --env dev",
+    "dev": "webpack-dev-server --progress --colors --watch --env dev",
     "test": "mocha --require babel-register --colors ./test/*.spec.js",
     "test:watch": "mocha --require babel-register --colors -w ./test/*.spec.js"
   },
@@ -42,6 +42,7 @@
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.12.2",
     "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "3.1.5",
     "yargs": "^10.0.3"
   }
 }
